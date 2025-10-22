@@ -1,0 +1,40 @@
+name: CI Mentoria
+
+# gatilhos
+on: 
+  workflow_dispatch:
+
+# rotinas
+jobs:
+  tests: 
+    # [configuração do so]
+    # sistema operacional
+    runs-on: ubuntu-latest
+
+    # variaveis
+    env: 
+      API_BASE_URL: 'http://localhost:3000'
+      PORT: 4000
+
+    # acoes ou passos
+    steps: 
+
+      - name: Checkout do Repositório
+      uses: actions/checkout@4
+
+      - name: Instalando as dependencias
+      run: npm install
+
+      - name: Iniciando o servidor de mocks
+      run: npm run mock-server &
+
+      - name: Iniciando o servidor da aplicação
+      run: npm run server &
+
+      - name: Executando os testes
+      run: npx cypress run
+      
+      
+
+      
+      
