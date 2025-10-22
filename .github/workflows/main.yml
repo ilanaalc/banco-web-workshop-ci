@@ -20,16 +20,16 @@ jobs:
     steps: 
 
       - name: Checkout do Repositório
-      uses: actions/checkout@4
+        uses: actions/checkout@4
 
       - name: Instalando as dependencias
-      run: npm install
+        run: npm install
 
       - name: Iniciando o servidor de mocks
-      run: npm run mock-server &
+        run: npm run mock-server &
 
       - name: Iniciando o servidor da aplicação
-      run: npm run server &
+        run: npm run server &
 
       - name: Executando os testes
-      run: npx cypress run
+        run: npx cypress run
