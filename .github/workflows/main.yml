@@ -33,8 +33,3 @@ jobs:
 
       - name: Executando os testes
       run: npx cypress run
-      
-      
-
-      
-      
