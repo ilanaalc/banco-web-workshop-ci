@@ -19,7 +19,7 @@ jobs:
     steps:
   
     - name: Checkout do Repositório
-      uses: actions/checkout@4
+      uses: actions/checkout@v4
 
     - name: Instalando as dependências
       run: npm install
